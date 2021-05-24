@@ -1,0 +1,412 @@
+package arithmetics;
+
+class Math{
+  float add(double x, double y){
+    return to_float(x+y);
+  }
+  float add(int x, int y){
+    return to_float(x+y);
+  }
+  float add(double x[]){
+    double result = 0;
+    int a;
+    for(a=0;a<x.length;a++){
+      result += x[a];
+    }
+    return to_float(result);
+  }
+  float subtract(double x, double y){
+    return to_float(x-y);
+  }
+  float multiply(double x, double y){
+    return to_float(x*y);
+  }
+  float multiply(double x[]){
+    double result = 0;
+    int a;
+    for(a=0;a<x.length;a++){
+      result *= x[a];
+    }
+    return to_float(result);
+  }
+  float divide(double x, double y){
+    return to_float(x/y);
+  }
+  float remainder(double x, double y){
+    return to_float(x%y);
+  }
+  float power(double x, double y){
+    return to_float(java.lang.Math.pow(x,y));
+}
+  float square(double num){
+    return to_float(power(num,2));
+  }
+  float cube(double num){
+    return to_float(power(num,3));
+  }
+  float root(double num, double x){
+   return to_float(power(num,1/x));
+  }
+  float root(double num){
+    return to_float(power(num,0.5));
+  }
+  int factorial(int n){
+    int result=n;
+    if (result == 0) return 1;
+    else if (result < 0){
+      for(int x=n-n*2;x>2;x--){
+        result*=x-1;
+      }
+      return result;
+    }
+    else{
+      for(int x=n;x>2;x--){
+        result*=x-1;
+      }
+      return result;
+    }
+  }
+  double pi(){
+    return 3.1415926535897932384626338;
+  }
+  double e(){
+    return 2.718281828;
+  }
+  float log(double base, double n){
+    double x=java.lang.Math.log(n);
+    double y=java.lang.Math.log(base);
+    return to_float(x/y);
+  }
+  float log(double n){
+   return to_float(java.lang.Math.log(n)/java.lang.Math.log(10));
+  }
+  float In(double x){
+    return to_float(log(e(),x));
+  }
+  int minute_to_second(int x){
+    return x*60;
+  }
+  int hour_to_second(int x){
+    return x*60*60;
+  }
+  float second_to_minute(double x){
+   return (float)x/60;
+  }
+  float second_to_hour(double x){
+    return (float)x/60/60;
+  }
+ float minute_to_hour(double x){
+    return (float)x/60;
+  }
+  int hour_to_minute(int x){
+    return x*60;
+  }
+  float hypotenuse(double x, double y){
+    return to_float(root(power(x,2)+power(y,2)));
+  }
+  int nth_fibonacci(int n){
+    double PHI = 1.6180339;
+    int f[] = {0,1,1,2,3,5};
+    if (n<6) return f[n];
+    int t=5;
+    int fn = 5;
+    while(t<n){
+    fn = (int)java.lang.Math.round(fn*PHI);
+    t++;
+    }
+    return fn;
+  }
+  int round(double n){
+    return (int)java.lang.Math.round(n);
+  }
+  int round(float n){
+    return (int)java.lang.Math.round(n);
+  }
+  int nth_prime(int n){ 
+    int num=1, count=0, i;
+    while (count < n){  
+      num=num+1;  
+      for (i = 2; i <= num; i++){
+        if (num % i == 0){
+          break;
+        }  
+      }  
+      if (i == num){  
+        count = count+1;
+      }
+    }
+   return num;
+  }
+  float celsius_to_fahrenheit(double c){
+    return to_float(((c*9)/5)+32);
+  }
+  float fahrenheit_to_celsius(double f){
+    return to_float((f-32)*(5/9));
+  }
+  long to_long(int b){
+    return (long)b;
+  }
+  long to_long(short b){
+    return (long)b;
+  }
+  long to_long(byte b){
+    return (long)b;
+  }
+  long to_long(double b){
+    return (long)java.lang.Math.round(b);
+  }
+  long to_long(float b){
+    return (long)java.lang.Math.round(b);
+  }
+  int to_int(double b){
+    return (int)java.lang.Math.round(b);
+  }
+  int to_int(float b){
+    return (int)java.lang.Math.round(b);
+  }
+  int to_int(long b){
+    return (int)b;
+  }
+  int to_int(byte b){
+    return (int)b;
+  }
+  int to_int(short b){
+    return (int)b;
+  }
+  short to_short(int b){
+    return (short)b;
+  }
+  short to_short(double b){
+    return (short)java.lang.Math.round(b);
+  }
+  short to_short(byte b){
+    return (short)b;
+  }
+  short to_short(long b){
+    return (short)b;
+  }
+  short to_short(float b){
+    return (short)java.lang.Math.round(b);
+  }
+  byte to_byte(double b){
+    return (byte)java.lang.Math.round(b);
+  }
+  byte to_byte(float b){
+    return (byte)java.lang.Math.round(b);
+  }
+  byte to_byte(int b){
+    return (byte)b;
+  }
+  byte to_byte(short b){
+    return (byte)b;
+  }
+  byte to_byte(long b){
+    return (byte)b;
+  }
+  double to_double(int b){
+    return (double)b;
+  }
+  double to_double(short b){
+    return (double)b;
+  }
+  double to_double(long b){
+    return (double)b;
+  }
+  double to_double(byte b){
+    return (double)b;
+  }
+  double to_double(float b){
+    return (double)b;
+  }
+  float to_float(int b){
+    return (float)b;
+  }
+  float to_float(double b){
+    return (float)b;
+  }
+  float to_float(short b){
+    return (float)b;
+  }
+  float to_float(long b){
+    return (float)b;
+  }
+  float to_float(byte b){
+    return (float)b;
+  }
+  char to_char(int b){
+    return (char)b;
+  }
+  char to_char(double b){
+    return (char)b;
+  }
+  char to_char(float b){
+    return (char)b;
+  }
+  float to_radian(double d){
+    return to_float(java.lang.Math.toRadians(d));
+  }
+  float to_degree(double r){
+    return to_float(java.lang.Math.toDegrees(r));
+  }
+  boolean not(boolean v){
+    boolean res = true;
+    if (v) return res=false;
+    else if (!v) return res=true;
+    return res;
+  }
+  float sin(double x){
+    return to_float(java.lang.Math.sin(java.lang.Math.toRadians(x)));
+  }
+  float cos(double x){
+    return to_float(java.lang.Math.cos(java.lang.Math.toRadians(x)));
+  }
+  float tan(double x){
+    return to_float(java.lang.Math.tan(java.lang.Math.toRadians(x)));
+  }
+  float sec(double x){
+    return to_float(power(cos(x),-1));
+  }
+  float cosec(double x){
+    return to_float(power(sin(x),-1));
+  }
+  float cot(double x){
+    return to_float(power(tan(x),-1));
+  }
+  int random(int min, int max){
+    int random=(int)(java.lang.Math.random() * ((max-min)+1)) + (min);
+    return random;
+  }
+  int random(int max){
+    return to_int(java.lang.Math.round(java.lang.Math.random()*max));
+  }
+  int random(){
+    return to_int(java.lang.Math.round(java.lang.Math.random()*100));
+  }
+  char random(char c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  int random(int c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  float random(float c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  double random(double c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  long random(long c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  short random(short c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  byte random(byte c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  boolean random(boolean c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  String random(String c[]){
+    int x = random(c.length-1);
+    return c[x];
+  }
+  int year(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.YEAR);
+  }
+  int month(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.MONTH);
+  }
+  int date(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.DATE);
+  }
+  int hour(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.HOUR);
+  }
+  int minute(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE);
+  }
+  int second(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.SECOND);
+  }
+  int millisecond(){
+    return java.util.Calendar.getInstance().get(java.util.Calendar.MILLISECOND);
+  }
+  String timezone(){
+    return java.util.Calendar.getInstance().getTimeZone().getDisplayName();
+  }
+  int max(int a, int b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  int min(int a, int b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+  long max(long a, long b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  long min(long a,long b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+  short max(short a,short b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  byte min(byte a, byte b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+  double max(double a, double b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  short min(short a, short b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+  byte max(byte a, byte b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  double min(double a, double b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+  float max(float a, float b){
+    if (a<b) return b;
+    else if (a>b) return a;
+    return 0;
+  }
+  float min(float a, float b){
+    if (a<b) return a;
+    else if (a>b) return b;
+    return 0;
+  }
+}
+
+class Mathh {
+  public static void main(String args[]) {
+   Math math = new Math();
+   System.out.println(math.factorial(46));
+  }
+}
